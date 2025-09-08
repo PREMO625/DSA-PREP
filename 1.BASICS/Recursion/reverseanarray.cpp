@@ -36,7 +36,9 @@ Constraints:
 
 1 <= arr[i] <= 10^5
 
-Expected Time complexity:O(n logn) or O(o sqrt(n)) or O(n)
+Expected Time and space  complexity:O(n) and O(1)(achieved)[iterative approach]
+Expected Time and space complexity:O(N) for both when recursion
+
 */
 #include <iostream>
 #include <vector>
@@ -88,7 +90,7 @@ int main() {
 
     //reverse(n, arr.data());
     reverseRecursive(arr.data(), 0, n - 1);
-    
+
     cout << "[";
     for(int i = 0; i < n; i++) {
         cout << arr[i];
