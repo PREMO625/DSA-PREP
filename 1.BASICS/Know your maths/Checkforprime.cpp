@@ -24,28 +24,22 @@ Constraints:
 My approach:
 */
 #include<iostream>
-#include<vector>
 using namespace std;
 
-bool isPrime(int num)
-{
-    //if (num <= 1) return false;
-    for (int i = 2; i * i <= num; ++i)
-    {
+bool isPrime(int num) {
+    if (num <= 1) return false;
+    if (num == 2) return true;
+    if (num % 2 == 0) return false;
+
+    for (int i = 3; i * i <= num; i += 2) {
         if (num % i == 0)
             return false;
     }
     return true;
 }
 
-int main()
-{
+int main() {
     int num;
-    cin>>num;
-    if(isPrime(num))
-    {
-        cout<<"\nThe number is Prime";
-    }
-    else
-    cout<<"\nThe number is not Prime";
+    cin >> num;
+    cout << "\nThe number is " << (isPrime(num) ? "Prime" : "not Prime");
 }
